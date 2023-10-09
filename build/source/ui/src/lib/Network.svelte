@@ -1,0 +1,34 @@
+<script>
+  import { api } from '$lib/api'
+  import PrimaryButton from '$lib/PrimaryButton.svelte'
+
+  import NetworkEth from '$lib/NetworkEth.svelte'
+  import NetworkWifi from '$lib/NetworkWifi.svelte'
+
+  export let ethOnly, connected
+
+</script>
+
+  <div class="network">
+    <div class="network-title">Connectivity</div>
+    <NetworkEth {ethOnly} />
+
+    {#if !ethOnly}
+      <NetworkWifi {connected} />
+    {/if}
+
+  </div>
+
+<style>
+  .network {
+    background: #0404044d;
+    padding: 40px;
+    border-radius: 15px;
+    font-size: 18px;
+    gap: 12px;
+  }
+  .network-title {
+    font-size: 18px;
+    padding-bottom: 8px;
+  }
+</style>

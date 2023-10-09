@@ -1,0 +1,10 @@
+[Unit]
+Description=NativePlanet GroundSeg Controller
+After=multi-user.target
+[Service]
+Type=simple
+Restart=always
+User=root
+ExecStart=/opt/nativeplanet/groundseg/groundseg
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+{
+  description = "A very basic flake";
+
+  outputs = { self, nixpkgs }: {
+
+    packages.x86_64-linux.groundseg = self.legacyPackages.x86_64-linux.callPackage ./groundseg.nix {};
+
+    packages.x86_64-linux.default = self.packages.x86_64-linux.groundseg;
+
+  };
+}
